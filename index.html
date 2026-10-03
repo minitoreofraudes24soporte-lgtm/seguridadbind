@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ilustre Corretora de Seguros LTDA</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #123b63;
+            --primary-dark: #0a2947;
+            --secondary: #1f6fae;
+            --accent: #d6a84f;
+            --light: #f5f8fb;
+            --dark: #17212b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background: #fff;
+        }
+
+        .navbar {
+            background: rgba(255,255,255,0.97);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--primary) !important;
+            font-size: 1.15rem;
+        }
+
+        .navbar-brand span {
+            color: var(--accent);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: #34495e !important;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary) !important;
+        }
+
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(135deg, rgba(10,41,71,.96), rgba(18,59,99,.90)),
+                url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80')
+                center/cover;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+            right: -150px;
+            top: -120px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 50px;
+            background: rgba(255,255,255,.12);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,.2);
+            font-size: .85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.7rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.08;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            color: rgba(255,255,255,.82);
+            font-size: 1.15rem;
+            max-width: 650px;
+            line-height: 1.8;
+        }
+
+        .btn-main {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-main:hover {
+            background: #bd913d;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light-custom {
+            border: 1px solid rgba(255,255,255,.5);
+            color: #fff;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-outline-light-custom:hover {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        .stats {
+            margin-top: -60px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stat-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 35px rgba(0,0,0,.08);
+            height: 100%;
+            border: 1px solid #edf1f5;
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .stat-card h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            margin: 0;
+            color: #6c7a89;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 2.4rem;
+        }
+
+        .section-subtitle {
+            color: #6c7a89;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        .about-box {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 45px;
+        }
+
+        .about-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 14px;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card {
+            height: 100%;
+            padding: 35px 28px;
+            border-radius: 16px;
+            border: 1px solid #e9eef3;
+            background: #fff;
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.08);
+            border-color: transparent;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            background: #edf5fb;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h5 {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: #6c7a89;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: var(--primary);
+            color: #fff;
+            border-radius: 25px;
+            padding: 65px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .highlight::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 50%;
+            right: -100px;
+            bottom: -130px;
+        }
+
+        .highlight h2 {
+            font-weight: 800;
+        }
+
+        .highlight p {
+            color: rgba(255,255,255,.78);
+            line-height: 1.8;
+        }
+
+        .feature {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .feature i {
+            color: var(--accent);
+            font-size: 1.4rem;
+        }
+
+        .feature h6 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .feature p {
+            margin: 0;
+            font-size: .92rem;
+        }
+
+        .data-table {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,.06);
+        }
+
+        .data-table .row-data {
+            padding: 18px 25px;
+            border-bottom: 1px solid #edf0f3;
+        }
+
+        .data-table .row-data:last-child {
+            border-bottom: none;
+        }
+
+        .data-label {
+            color: #718096;
+            font-weight: 600;
+        }
+
+        .data-value {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .contact-box {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .contact-item i {
+            font-size: 1.6rem;
+            color: var(--secondary);
+        }
+
+        .contact-item h6 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .contact-item p {
+            margin: 0;
+            color: #687684;
+        }
+
+        .map-container {
+            min-height: 420px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,.08);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 420px;
+            border: 0;
+        }
+
+        .cta {
+            background:
+                linear-gradient(135deg, rgba(10,41,71,.96), rgba(31,111,174,.9)),
+                url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80')
+                center/cover;
+            padding: 90px 0;
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-size: 2.7rem;
+            font-weight: 800;
+        }
+
+        .cta p {
+            color: rgba(255,255,255,.8);
+        }
+
+        footer {
+            background: #081c30;
+            color: rgba(255,255,255,.7);
+            padding: 55px 0 25px;
+        }
+
+        footer h5 {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        footer a {
+            color: rgba(255,255,255,.7);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .footer-line {
+            border-top: 1px solid rgba(255,255,255,.1);
+            margin-top: 35px;
+            padding-top: 20px;
+            font-size: .9rem;
+        }
+
+        .floating-btn {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,.2);
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .floating-btn:hover {
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 600px;
+            }
+
+            .stats {
+                margin-top: 30px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .about-box,
+            .highlight {
+                padding: 30px;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            Ilustre <span>Corretora</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#empresa">Empresa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicos">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#dados">Dados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+    <div class="container hero-content">
+        <div class="row">
+            <div class="col-lg-8">
+
+                <span class="hero-badge">
+                    <i class="bi bi-shield-check me-2"></i>
+                    Corretora de Seguros
+                </span>
+
+                <h1>
+                    Proteção para o que
+                    <span>realmente importa.</span>
+                </h1>
+
+                <p class="mt-4">
+                    A Ilustre Corretora de Seguros LTDA atua no segmento de
+                    seguros, oferecendo soluções de proteção para pessoas,
+                    famílias e patrimônios.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="#servicos" class="btn btn-main">
+                        Conheça nossos serviços
+                    </a>
+
+                    <a href="#contato" class="btn btn-outline-light-custom">
+                        Fale conosco
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="stat-card text-center">
+                    <i class="bi bi-calendar-check"></i>
+                    <h3>1997</h3>
+                    <p>Início das atividades</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-card text-center">
+                    <i class="bi bi-shield-check"></i>
+                    <h3>Seguros</h3>
+                    <p>Segmento de atuação</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-card text-center">
+                    <i class="bi bi-building"></i>
+                    <h3>LTDA</h3>
+                    <p>Sociedade Empresária</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat-card text-center">
+                    <i class="bi bi-geo-alt"></i>
+                    <h3>São Paulo</h3>
+                    <p>São Paulo - SP</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- EMPRESA -->
+<section class="section" id="empresa">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="section-title">Sobre a Ilustre Corretora</h2>
+            <p class="section-subtitle mt-3">
+                Uma empresa estabelecida no mercado e voltada para soluções
+                de seguros e proteção patrimonial.
+            </p>
+        </div>
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+                <div class="about-box">
+
+                    <div class="about-icon">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+
+                    <h3 class="fw-bold mb-3">
+                        Segurança e proteção
+                    </h3>
+
+                    <p class="text-secondary lh-lg">
+                        A Ilustre Corretora de Seguros LTDA está estabelecida
+                        desde 1997 e possui sede no município de São Paulo,
+                        no estado de São Paulo.
+                    </p>
+
+                    <p class="text-secondary lh-lg mb-0">
+                        A empresa atua no segmento de corretagem de seguros,
+                        buscando proporcionar soluções adequadas às
+                        necessidades de proteção de seus clientes.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="feature">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <div>
+                        <h6>Experiência</h6>
+                        <p>
+                            Empresa constituída em 1997 e estabelecida
+                            no mercado há décadas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <div>
+                        <h6>Atuação especializada</h6>
+                        <p>
+                            Foco no segmento de seguros e soluções de proteção.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <div>
+                        <h6>Empresa regularizada</h6>
+                        <p>
+                            Sociedade Empresária Limitada com CNPJ próprio.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SERVIÇOS -->
+<section class="section bg-light" id="servicos">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="section-title">Soluções em Seguros</h2>
+
+            <p class="section-subtitle mt-3">
+                Soluções voltadas à proteção de diferentes aspectos da vida
+                pessoal, familiar e patrimonial.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-car-front"></i>
+                    </div>
+
+                    <h5>Seguro Auto</h5>
+
+                    <p>
+                        Proteção para veículos, com opções de cobertura
+                        conforme as necessidades do segurado.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-house-door"></i>
+                    </div>
+
+                    <h5>Seguro Residencial</h5>
+
+                    <p>
+                        Alternativas de proteção para residências,
+                        patrimônio e diferentes situações previstas
+                        em apólice.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-heart-pulse"></i>
+                    </div>
+
+                    <h5>Seguro de Vida</h5>
+
+                    <p>
+                        Soluções de proteção pessoal e familiar de acordo
+                        com as necessidades de cada cliente.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-building"></i>
+                    </div>
+
+                    <h5>Seguro Empresarial</h5>
+
+                    <p>
+                        Opções de proteção para empresas, estabelecimentos
+                        e patrimônios comerciais.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+
+                    <h5>Proteção Patrimonial</h5>
+
+                    <p>
+                        Soluções de seguros destinadas à proteção de
+                        diferentes tipos de patrimônio.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+
+                    <h5>Consultoria em Seguros</h5>
+
+                    <p>
+                        Orientação para identificar alternativas de cobertura
+                        adequadas às necessidades apresentadas.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- DESTAQUE -->
+<section class="section">
+    <div class="container">
+
+        <div class="highlight">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+                    <span class="text-uppercase small fw-bold"
+                          style="color:#d6a84f;">
+                        Ilustre Corretora
+                    </span>
+
+                    <h2 class="mt-2 mb-3">
+                        Uma relação baseada em confiança e proteção
+                    </h2>
+
+                    <p>
+                        Trabalhar com seguros significa compreender riscos,
+                        necessidades e possibilidades de proteção. A Ilustre
+                        Corretora está estabelecida em São Paulo e atua no
+                        segmento de seguros desde 1997.
+                    </p>
+
+                    <a href="#contato" class="btn btn-main mt-3">
+                        Entre em contato
+                    </a>
+                </div>
+
+                <div class="col-lg-5 mt-5 mt-lg-0">
+
+                    <div class="feature">
+                        <i class="bi bi-shield-check"></i>
+                        <div>
+                            <h6>Proteção</h6>
+                            <p>
+                                Alternativas para diferentes necessidades.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <i class="bi bi-person-check"></i>
+                        <div>
+                            <h6>Atendimento</h6>
+                            <p>
+                                Relacionamento próximo com clientes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <i class="bi bi-clock-history"></i>
+                        <div>
+                            <h6>Experiência</h6>
+                            <p>
+                                Empresa estabelecida desde 1997.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- DADOS DA EMPRESA -->
+<section class="section bg-light" id="dados">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="section-title">Dados da Empresa</h2>
+
+            <p class="section-subtitle mt-3">
+                Informações cadastrais da Ilustre Corretora de Seguros LTDA.
+            </p>
+        </div>
+
+        <div class="data-table">
+
+            <div class="row row-data">
+                <div class="col-md-4 data-label">
+                    CNPJ
+                </div>
+                <div class="col-md-8 data-value">
+                    01.686.307/0001-50
+                </div>
+            </div>
+
+            <div class="row row-data">
+                <div class="col-md-4 data-label">
+                    Razão Social
+                </div>
+                <div class="col-md-8 data-value">
+                    Ilustre Corretora de Seguros LTDA
+                </div>
+            </div>
+
+            <div class="row row-data">
+                <div class="col-md-4 data-label">
+                    Data de Abertura
+                </div>
+                <div class="col-md-8 data-value">
+                    02/01/1997
+                </div>
+            </div>
+
+            <div class="row row-data">
+                <div class="col-md-4 data-label">
+                    Porte
+                </div>
+                <div class="col-md-8 data-value">
+                    Micro Empresa
+                </div>
+            </div>
+
+            <div class="row row-data">
+                <div class="col-md-4 data-label">
+                    Natureza Jurídica
+                </div>
+                <div class="col-md-8 data-value">
+                    Sociedade Empresária Limitada
+                </div>
+            </div>
+
+            <div class="row row-data">
+                <div class="col-md-4 data-label">
+                    Logradouro
+                </div>
+                <div class="col-md-8 data-value">
+                    Rua Capitão Prudente, 226
+                </div>
+            </div>
+
+            <div class="row row-data">
+                <div class="col-md-4 data-label">
+                    Complemento
+                </div>
+                <div class="col-md-8 data-value">
+                    Apto 21
+                </div>
+            </div>
+
+            <div class="row row-data">
+                <div class="col-md-4 data-label">
+                    Bairro
+                </div>
+                <div class="col-md-8 data-value">
+                    Pinheiros
+                </div>
+            </div>
+
+            <div class="row row-data">
+                <div class="col-md-4 data-label">
+                    CEP
+                </div>
+                <div class="col-md-8 data-value">
+                    05422-050
+                </div>
+            </div>
+
+            <div class="row row-data">
+                <div class="col-md-4 data-label">
+                    Município
+                </div>
+                <div class="col-md-8 data-value">
+                    São Paulo - SP
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CONTATO -->
+<section class="section" id="contato">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="section-title">Entre em Contato</h2>
+
+            <p class="section-subtitle mt-3">
+                A Ilustre Corretora está localizada em São Paulo,
+                no bairro de Pinheiros.
+            </p>
+        </div>
+
+        <div class="row g-5 align-items-stretch">
+
+            <div class="col-lg-5">
+
+                <div class="contact-box h-100">
+
+                    <div class="contact-item">
+                        <i class="bi bi-building"></i>
+
+                        <div>
+                            <h6>Empresa</h6>
+                            <p>
+                                Ilustre Corretora de Seguros LTDA
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="bi bi-geo-alt"></i>
+
+                        <div>
+                            <h6>Endereço</h6>
+                            <p>
+                                Rua Capitão Prudente, 226<br>
+                                Apto 21 - Pinheiros<br>
+                                São Paulo - SP<br>
+                                CEP 05422-050
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="bi bi-shield-check"></i>
+
+                        <div>
+                            <h6>Segmento</h6>
+                            <p>
+                                Corretagem de Seguros
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item mb-0">
+                        <i class="bi bi-calendar3"></i>
+
+                        <div>
+                            <h6>Desde</h6>
+                            <p>
+                                02 de janeiro de 1997
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-7">
+
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps?q=Rua+Capitão+Prudente,+226,+Pinheiros,+São+Paulo,+SP&output=embed"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container text-center">
+
+        <h2>
+            Proteção começa com uma boa escolha.
+        </h2>
+
+        <p class="mt-3 mb-4">
+            Conheça a Ilustre Corretora de Seguros LTDA.
+        </p>
+
+        <a href="#contato" class="btn btn-main">
+            Ver localização
+        </a>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+                <h5>Ilustre Corretora de Seguros LTDA</h5>
+
+                <p class="mt-3">
+                    Soluções em seguros e proteção, com atuação
+                    estabelecida em São Paulo desde 1997.
+                </p>
+            </div>
+
+            <div class="col-lg-3">
+                <h5>Navegação</h5>
+
+                <ul class="list-unstyled mt-3">
+                    <li class="mb-2">
+                        <a href="#inicio">Início</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#empresa">Empresa</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#servicos">Serviços</a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3">
+                <h5>Informações</h5>
+
+                <p class="mt-3 mb-1">
+                    CNPJ
+                </p>
+
+                <strong>
+                    01.686.307/0001-50
+                </strong>
+
+                <p class="mt-3 mb-1">
+                    Localização
+                </p>
+
+                <strong>
+                    São Paulo - SP
+                </strong>
+            </div>
+
+        </div>
+
+        <div class="footer-line text-center">
+            © <span id="ano"></span> Ilustre Corretora de Seguros LTDA.
+            Todos os direitos reservados.
+        </div>
+
+    </div>
+</footer>
+
+
+<!-- BOTÃO FLUTUANTE -->
+<a href="#contato" class="floating-btn" title="Localização">
+    <i class="bi bi-geo-alt-fill"></i>
+</a>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Ano automático
+    document.getElementById("ano").textContent = new Date().getFullYear();
+
+    // Fecha o menu mobile ao clicar
+    document.querySelectorAll(".navbar-nav .nav-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            const menu = document.getElementById("menu");
+
+            if (menu.classList.contains("show")) {
+                const bsCollapse = bootstrap.Collapse.getInstance(menu);
+
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
